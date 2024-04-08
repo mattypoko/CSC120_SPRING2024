@@ -15,21 +15,15 @@ public class UseFluidParticles {
         //----Create object
         FluidParticle aFluidParticle = new FluidParticle(particleTagId);
 
-        //----Move particle once
-        System.out.println(aFluidParticle);
-        System.out.print("Enter x movement: ");
-        positionX = keyboard.nextDouble();
-        System.out.print("Enter y movement: ");
-        positionY = keyboard.nextDouble();
-        aFluidParticle.moveParticle(positionX, positionY);
-
-        //----Move particle ... again!
-        System.out.println(aFluidParticle);
-        System.out.print("Enter x movement: ");
-        positionX = keyboard.nextDouble();
-        System.out.print("Enter y movement: ");
-        positionY = keyboard.nextDouble();
-        aFluidParticle.moveParticle(positionX, positionY);
+        //----Enter new movements until 0.0 is entered for both.
+        do {
+            System.out.println(aFluidParticle);
+            System.out.print("Enter x movement: ");
+            positionX = keyboard.nextDouble();
+            System.out.print("Enter y movement: ");
+            positionY = keyboard.nextDouble();
+            aFluidParticle.moveParticle(positionX, positionY);
+        } while ((positionX != 0.0) && (positionY != 0.0));
 
         //----Print out particle's position one last time.
         System.out.println(aFluidParticle);
